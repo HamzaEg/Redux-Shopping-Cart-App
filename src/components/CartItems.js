@@ -3,7 +3,7 @@ import CartItem from "./CartItem";
 import "./Cart.css";
 import { useSelector } from "react-redux";
 const CartItems = () => {
-  const cartItems = useSelector(state=>state.cart.listItems);
+  const cartItems = useSelector(state=>state.cart.itemsList);
 
   return (
     <div className="cart-container">
@@ -13,7 +13,7 @@ const CartItems = () => {
           <li key={item.id}>
             {" "}
           <CartItem 
-          quantity={item.totalQuantity}
+          quantity={item.quantity}
           id={item.id}
           price={item.price}
           total={item.totalPrice}
