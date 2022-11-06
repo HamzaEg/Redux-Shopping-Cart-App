@@ -5,7 +5,8 @@ import Cart from "./Cart";
 import "./Header.css";
 const Header = () => {
   const dispatch = useDispatch();
-  const logoutHandler = () => {
+  const logoutHandler = (e) => {
+    e.preventDefault();
     dispatch(authActions.logout());
   };
   return (
@@ -24,7 +25,10 @@ const Header = () => {
             <Cart />
           </li>
           <li>
-            <button onClick={logoutHandler()} className="logout-btn">Logout</button>{" "}
+          <form onSubmit={logoutHandler}>
+          <button type="submit" className="logout-btn">Logout</button>{" "}
+
+           </form>
           </li>
         </ul>
       </nav>
